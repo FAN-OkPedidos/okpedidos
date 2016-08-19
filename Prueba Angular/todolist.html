@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PrimerApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/materialize.css">
+  <title>Hola Mundo con Angular</title>
+</head>
+<body class="indigo" ng-controller="PrimerController">
+  <div class="container" >
+    <div class="row">
+      <div class="col s6">
+        <div class="card z-depth-3 indigo lighten-4 center-nico">
+          <div class="card-content">
+            <span class="card-title black-text">To Do List</span>
+            <form>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="descripcion" type="text" class="validate" ng-model="newAct.descripcion">
+                  <label for="descripcion" class="active">Descripcion</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="fecha" type="date" class="datepicker" ng-model="newAct.fecha">
+                  <label for="fecha" class="active">Fecha</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-action">
+            <input type="submit" class="btn" value="Enviar" ng-click="agregarAct()">
+          </div>          
+        </div>
+      </div>
+      <div class="col s6">
+        <h3 class="header">Actividades</h3>
+        <table>
+          <thead>
+            <tr>
+              <th data-field="title">Descripcion</th>
+              <th data-field="body">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="actividad in todo">
+              <td>{{actividad.descripcion}}</td>
+              <td>{{actividad.fecha}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+  </script>
+  <script src="js/angular.min.js"></script>
+  <!-- <script src="js/angular-local-storage.min.js"></script> -->
+  <script src="js/controller3.js"></script>
+</body>
+</html>

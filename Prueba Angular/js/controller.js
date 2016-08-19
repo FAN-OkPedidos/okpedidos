@@ -1,10 +1,9 @@
 var app=angular.module("PrimerApp",[]);
-app.controller("PrimerController",function($scope){
-    $scope.nombre = "Nico";
-    $scope.nuevoUsuario = {};
-    $scope.usuarios = [];
-    $scope.agregarUsuario = function(){
-        $scope.usuarios.push($scope.nuevoUsuario);
-        $scope.nuevoUsuario = {};
+app.controller("PrimerController",["$scope",function(s){
+    s.nuevoUsuario = {};
+    s.usuarios = [];
+    s.agregarUsuario = function(){
+        s.usuarios.push(s.nuevoUsuario);
+        s.nuevoUsuario = {};
     }
-});
+}]);

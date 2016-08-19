@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PrimerApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/materialize.css">
+  <title>Hola Mundo con Angular</title>
+</head>
+<body class="indigo" ng-controller="PrimerController">
+  <div class="container" >
+    <div class="row">
+        <div class="col s6">
+        <div class="card z-depth-3 indigo lighten-4 center-nico">
+          <div class="card-content">
+            <span class="card-title black-text">Posteos</span>
+            <form>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="title" type="text" class="validate" ng-model="newPost.title">
+                  <label for="title" class="active">Title</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="body" type="text" class="validate" ng-model="newPost.body">
+                  <label for="body" class="active">Body</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-action">
+            <input type="submit" class="btn" value="Enviar" ng-click="agregarPost()">
+          </div>
+        </div>
+        </div>
+        <div class="col s6">
+          <h3 class="header">Posts</h3>
+          <table>
+        <thead>
+          <tr>
+              <th data-field="title">Title</th>
+              <th data-field="body">Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="post in posts">
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-local-storage.min.js"></script>
+  <script src="js/controller2.js"></script>
+</body>
+</html>
