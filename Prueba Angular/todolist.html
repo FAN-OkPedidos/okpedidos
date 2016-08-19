@@ -30,8 +30,9 @@
             </form>
           </div>
           <div class="card-action">
-            <input type="submit" class="btn" value="Enviar" ng-click="agregarAct()">
-          </div>          
+            <a class="teal-text" ng-click="agregarAct()">Enviar</a>
+            <a class="right teal-text" ng-click="limpiarLista()">Limpiar</a>
+          </div>
         </div>
       </div>
       <div class="col s6">
@@ -64,7 +65,7 @@
   });
   </script>
   <script src="js/angular.min.js"></script>
-  <!-- <script src="js/angular-local-storage.min.js"></script> -->
+  <script src="js/angular-local-storage.min.js"></script>
   <script src="js/controller3.js"></script>
 </body>
 </html>
