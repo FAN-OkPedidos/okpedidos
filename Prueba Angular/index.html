@@ -17,27 +17,39 @@
             <form>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="usuario" type="text" class="validate">
+                  <input id="usuario" type="text" class="validate" ng-model="nuevoUsuario.nombre">
                   <label for="usuario" class="active">Usuario</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="password" type="password" class="validate">
+                  <input id="password" type="password" class="validate" ng-model="nuevoUsuario.password">
                   <label for="password" class="active">Password</label>
                 </div>
               </div>
             </form>
           </div>
           <div class="card-action">
-            <input type="submit" class="btn" value="Sign In">
+            <input type="submit" class="btn" value="Sign In" ng-click="agregarUsuario()">
           </div>
         </div>
         </div>
         <div class="col s6">
-          <h3>
-            {{"Hola " + nombre}}
-          </h3>
+          <h3 class="header">Usuarios</h3>
+          <table>
+        <thead>
+          <tr>
+              <th data-field="nombre">Nombre</th>
+              <th data-field="password">Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="usuario in usuarios">
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.password}}</td>
+          </tr>
+        </tbody>
+      </table>
         </div>
     </div>
   </div>
