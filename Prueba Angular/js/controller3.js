@@ -12,6 +12,7 @@ angular.module("PrimerApp",["LocalStorageModule"])
         $scope.todo.push($scope.newAct);
         console.log($scope.newAct);
         $scope.newAct = {};
+
       };
       $scope.limpiarLista = function(){
         $scope.todo = [];

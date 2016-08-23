@@ -45,7 +45,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="actividad in todo">
+            <tr ng-repeat="actividad in todo | orderBy: 'fecha': true">
               <td>{{actividad.descripcion}}</td>
               <td>{{actividad.fecha}}</td>
             </tr>
