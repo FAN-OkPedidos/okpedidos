@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="PrimerApp">
 
 <!--================================================================================
 	Item Name: Materialize - Material Design Admin Template
@@ -398,7 +398,7 @@
                   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
                   <!-- START CONTENT -->
-                  <section id="content">
+                  <section id="content" ng-controller="PedidosController">
                     <!--breadcrumbs start-->
                     <div id="breadcrumbs-wrapper">
                       <!-- Search for small screen -->
@@ -426,36 +426,18 @@
           <div class="divider"></div>
           <div id="accordion" class="section">
             <div class="row">
-              <!-- <div class="col s12 m4 l3">
-                <p>Accordion elements only need initialization if they are added dynamically. You can also pass in options inside the initialization, however this can be done in the HTML markup as well.</p>
-              </div> -->
               <div class="col s12 m6 l6">
                 <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
                   <li>
-                    <div class="collapsible-header">Pizzas</div>
+                    <div class="collapsible-header active">Pizzas</div>
                     <div class="collapsible-body">
                       <div class="container">
                        <table class="striped">
                         <tbody>
-                          <tr>
-                            <td>Fugazetta</td>
-                            <td>$0.87</td>
-                            <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                          </tr>
-                          <tr>
-                            <td>Calabresa</td>
-                            <td>$0.94</td>
-                            <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                          </tr>
-                          <tr>
-                            <td>Napolitana</td>
-                            <td>$0.80</td>
-                            <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                          </tr>
-                          <tr>
-                            <td>Palmitos</td>
-                            <td>$1.02</td>
-                            <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
+                          <tr ng-repeat="pizza in pizzas">
+                            <td ng-bind="pizza.nombre"></td>
+                            <td ng-bind="pizza.precio | currency"></td>
+                            <td><a href="" ng-click="agregarItem(pizza)"><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
                           </tr>
                         </tbody>
                       </table>
@@ -468,15 +450,10 @@
                     <div class="container">
                      <table class="striped">
                       <tbody>
-                        <tr>
-                          <td>Choclo</td>
-                          <td>$0.87</td>
-                          <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>Acelga</td>
-                          <td>$0.94</td>
-                          <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
+                        <tr ng-repeat="tarta in tartas">
+                          <td ng-bind="tarta.nombre"></td>
+                          <td ng-bind="tarta.precio | currency"></td>
+                          <td><a href="" ng-click="agregarItem(tarta)"><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -489,35 +466,10 @@
                   <div class="container">
                    <table class="striped">
                     <tbody>
-                      <tr>
-                        <td>Árabes</td>
-                        <td>$0.87</td>
-                        <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jamón y Queso<</td>
-                        <td>$0.94</td>
-                        <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>Carne Picada</td>
-                        <td>$0.80</td>
-                        <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>Verduras</td>
-                        <td>$1.02</td>
-                        <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>Pollo</td>
-                        <td>$0.47</td>
-                        <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td>Matambre</td>
-                        <td>$1.00</td>
-                        <td><a href=""><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
+                      <tr ng-repeat="empanada in empanadas">
+                        <td ng-bind="empanada.nombre"></td>
+                        <td ng-bind="empanada.precio | currency"></td>
+                        <td><a href="" ng-click="agregarItem(empanada)"><i class="small pink-text mdi-content-add-circle-outline"></i></a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -534,29 +486,11 @@
               <div class="container">
                <table>
                 <tbody>
-                  <tr>
+                  <tr ng-repeat="item in pedido track by $index">
                     <td>1</td>
-                    <td>Fugazetta</td>
-                    <td>$0.87</td>
-                    <td><a href=""><i class="small pink-text mdi-action-highlight-remove"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Calabresa</td>
-                    <td>$0.94</td>
-                    <td><a href=""><i class="small pink-text mdi-action-highlight-remove"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Napolitana</td>
-                    <td>$0.80</td>
-                    <td><a href=""><i class="small pink-text mdi-action-highlight-remove"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Palmitos</td>
-                    <td>$1.02</td>
-                    <td><a href=""><i class="small pink-text mdi-action-highlight-remove"></i></a></td>
+                    <td ng-bind="item.nombre"></td>
+                    <td ng-bind="item.precio | currency"></td>
+                    <td><a href="" ng-click="eliminarItem($index)"><i class="small pink-text mdi-action-highlight-remove"></i></a></td>
                   </tr>
                 </tbody>
               </table>
@@ -567,7 +501,7 @@
               <div class="row">
                 <div class="col s6 m6 l6">
                   <p>
-                  <input name="group1" type="radio" id="test2" class="with-gap" checked />
+                    <input name="group1" type="radio" id="test2" class="with-gap" checked />
                     <label for="test2" class="black-text"><b>Para Llevar</b></label>
                   </p>
                 </div>
@@ -586,15 +520,15 @@
               <tbody>
                 <tr>
                   <td>Subtotal</td>
-                  <td>$0.87</td>
+                  <td ng-bind="subtotal | currency"></td>
                 </tr>
                 <tr>
                   <td>Delivery</td>
-                  <td>$0.94</td>
+                  <td ng-bind="delivery | currency"></td>
                 </tr>
                 <tr>
                   <td><h6><b>Total</b></h6></td>
-                  <td>$0.80</td>
+                  <td ng-bind="total | currency"></td>
                 </tr>
               </tbody>
             </table>
@@ -816,6 +750,10 @@
 
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
+
+    <!-- Angular -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/pedidos-controller.js"></script>
     <!--custom-script.js - Add your own theme custom JS-->
     <script type="text/javascript" src="js/custom-script.js"></script>
     
