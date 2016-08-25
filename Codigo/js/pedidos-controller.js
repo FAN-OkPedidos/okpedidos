@@ -1,7 +1,10 @@
 var app = angular.module("PrimerApp",[]);
 app.controller("PedidosController",function($scope){
 	$scope.pedido = [];
-	$scope.delivery = 10;
+	$scope.delivery;
+	$scope.actualizarTotal = function(){
+		$scope.total = $scope.subtotal + $scope.delivery;
+	};
 	$scope.agregarItem = function(item){
 		$scope.pedido.push(item);
 		$scope.subtotal = $scope.pedido.reduce(function(total,actual){
