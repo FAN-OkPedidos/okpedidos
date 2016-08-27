@@ -3,5 +3,8 @@ angular.module("Cazimba",["ngRoute"])
 		$routeProvider
 		.when("/pedidos",{
 			templateUrl : "pedidos-routing.html"
+		})
+		.when("/principal",{
+			templateUrl : "principal-routing.html"
 		});
 	});
