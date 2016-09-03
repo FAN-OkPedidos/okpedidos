@@ -3,6 +3,7 @@ app.controller("TipoDeComidaController", function($scope){
 	$scope.nombre= "";
 	$scope.precioo= "";
 	// bandera para saber si hay que editar o agregar uno nuevo, false(uno nuevo) true (editar)
+	$scope.flagNewTipo = true;
 	$scope.flagEditOrNew = false; 
 
 	$scope.pizzas = [{id:1, nombreItem:"Fugazza", precio: 36, tipoComida: {tipo: "Pizza"}},{id:2, nombreItem:"Jamon y queso", precio: 87, tipoComida: {tipo: "Pizza"}},{id:3, nombreItem:"Palmitos", precio: 13,tipoComida: {tipo: "Pizza"}}];

@@ -260,20 +260,23 @@
                                           <label>Tipos de Comida</label> -->
                                         </div>
                                         <div class="col s2 m2 l2">
-                                            <a href=""><i class="small tooltipped blue-text mdi-content-add-circle-outline" data-position="bottom" data-delay="50" data-tooltip="Nuevo Tipo de Comida"></i></a>   
+                                            <a ng-click="flagNewTipo = false"href=""><i class="small tooltipped blue-text mdi-content-add-circle-outline" data-position="bottom" data-delay="50" data-tooltip="Nuevo Tipo de Comida"></i></a>   
                                         </div>
                                     </div>
                                     <br>                                
                                   </div> 
-                                 <!--  <div class="container">
-                                    <div class="row">
-                                        <div class="col s12 m12 l12">
-                                            <label class="disabled"for="nombre">Tipo de Comida</label>
-                                            <input class="disabled validate" placeholder="Ingrese el nuevo tipo de comida" id="nombre" type="text" > 
+                                  <div class="container">
+                                    <div ng-hide="flagNewTipo"class="row">
+                                        <div class="col s10 m10 l10">
+                                            <label class=""for="nombre">Tipo de Comida</label>
+                                            <input class="validate" placeholder="Ingrese el nuevo tipo de comida" id="nombre" type="text" > 
+                                        </div>
+                                        <div class="col s2 m2 l2">
+                                            <a ng-click="flagNewTipo = true"href=""><i class="small tooltipped blue-text mdi-content-clear" data-position="bottom" data-delay="50" data-tooltip="Ocultar"></i></a>   
                                         </div>
                                     </div>
                                     <br>
-                                  </div> --> 
+                                  </div> 
                                   <div class="container">
                                     <div class="row">
                                         <div class="col s6 m6 l6">
