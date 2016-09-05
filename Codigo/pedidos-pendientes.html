@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="pedidosPendientes">
 
 <!--================================================================================
 	Item Name: Materialize - Material Design Admin Template
@@ -114,7 +114,7 @@
         <!-- //////////////////////////////////////////////////////////////////////////// -->
 
         <!-- START CONTENT -->
-        <section id="content">
+        <section id="content" ng-controller="pedidosPendientesController">
           <!--breadcrumbs start-->
           <div id="breadcrumbs-wrapper">
             <!-- Search for small screen -->
@@ -140,23 +140,24 @@
         <div class="section">
           <div class="divider"></div>
           <div class="row">
-            <div class="col s12 m6 l6">
+            <div class="col s12 m6 l4">
                 <div class="card  red">
                       <div class="card-content white-text">
-                        <span class="card-title">Pollo al Horno</span>
-                        <p>Sin Mayonesa</p>
+                        <span class="card-title">Pedido 1</span>
+                        <p>1 Pollo al Horno con Doradas</p>
+                        <p>2 Pollo al Horno con Arroz c/crema</p>
                       </div>
                       <div class="card-action">
-                        <a href="#" class="lime-text text-accent-1">Finalizado</a>
+                        <a href="#" class="lime-text text-accent-1">Preparar</a>
                         <!-- <a href="#" class="lime-text text-accent-1">This is a link</a> -->
                       </div>
                     </div>
             </div>
-            <div class="col s12 m6 l6">
-                <div class="card  green">
+            <div class="col s12 m6 l4">
+                <div class="card  blue">
                       <div class="card-content white-text">
-                        <span class="card-title">Empanadas</span>
-                        <p> Docena de Pollo</p>
+                        <span class="card-title">Pedido 2 </span>
+                        <p> 12 Empanadas Pollo</p>
                       </div>
                       <div class="card-action">
                         <a href="#" class="lime-text text-accent-1">Finalizado</a>
@@ -164,6 +165,18 @@
                       </div>
                     </div>
             </div>
+            <div class="col s12 m6 l4">
+                <div class="card  blue">
+                      <div class="card-content white-text">
+                        <span class="card-title">Pedido 2 </span>
+                        <p> 12 Empanadas Pollo</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#" class="lime-text text-accent-1">Finalizado</a>
+                        <!-- <a href="#" class="lime-text text-accent-1">This is a link</a> -->
+                      </div>
+                    </div>
+            </div>  
           </div>
 
         <!-- Floating Action Button  BOTONO CHIQUITO DEL COSTADO-->
