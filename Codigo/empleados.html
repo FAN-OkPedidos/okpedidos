@@ -37,6 +37,35 @@
     <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <style type="text/css">
+      .input-field div.error{
+        position: relative;
+        top: -1rem;
+        left: 0rem;
+        font-size: 0.8rem;
+        color:#FF4081;
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        transform: translateY(0%);
+      }
+      .input-field label.active{
+          width:100%;
+      }
+      .right-alert input[type=text] + label:after, 
+      .right-alert input[type=password] + label:after, 
+      .right-alert input[type=email] + label:after, 
+      .right-alert input[type=url] + label:after, 
+      .right-alert input[type=time] + label:after,
+      .right-alert input[type=date] + label:after, 
+      .right-alert input[type=datetime-local] + label:after, 
+      .right-alert input[type=tel] + label:after, 
+      .right-alert input[type=number] + label:after, 
+      .right-alert input[type=search] + label:after, 
+      .right-alert textarea.materialize-textarea + label:after{
+          right:70px;
+      }
+    </style>
   </head>
 
   <body>
@@ -123,106 +152,207 @@
             <!-- <div class="header-search-wrapper grey hide-on-large-only">
                 <i class="mdi-action-search active"></i>
                 <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
-            </div> --> 
-       <div class="container">
-          <div class="row">
-            <div class="col s12 m12 l12">
-              <h5 class="breadcrumbs-title">Empleados</h5>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--breadcrumbs end-->
-
-
-
-      <!--start container-->
-      <div class="container">
-        <div class="section">
-
-          <div class="divider"></div>
-          <div id="accordion" class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col s12 m8 l9">
-                  <table id="mainTable" class="responsive-table striped">
-                    <thead>
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Domicilio</th>
-                        <th>Celular</th>
-                        <th>Email</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="empleado in empleados">
-                        <td ng-bind=empleado.nombre></td>
-                        <td ng-bind=empleado.fechaNac></td>
-                        <td ng-bind=empleado.domicilio></td>
-                        <td ng-bind=empleado.celular></td>
-                        <td ng-bind=empleado.email></td>
-                        <td>
-                          <a href=""><i class=""></i></a>
-                          <a href=""><i class=""></i></a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              </div> --> 
+              <div class="container">
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Empleados</h5>
+                    <br>
+                  </div>
                 </div>
-          </div>
-        </div>
-        <!-- Floating Action Button  BOTONO CHIQUITO DEL COSTADO-->
-    <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
-      <a href="#modal" class="tooltipped modal-trigger btn-floating btn-large" data-position="left" data-delay="50" data-tooltip="Nuevo Empleado">
-        <i class="mdi-content-add"></i>
-      </a>
-    </div>
-    <div id="modal" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <form>
-                  <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate" ng-model="newEmpleado.nombre">
-                        <label for="first_name">Nombre</label>
+              </div>
+            </div>
+            <!--breadcrumbs end-->
+
+
+
+            <!--start container-->
+            <div class="container">
+              <div class="section">
+
+                <div class="divider"></div>
+                <div id="accordion" class="section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col s12">
+                        <ul id="task-card" class="collection with-header">
+                          <li class="collection-header cyan">
+                            <h4 class="task-card-title">Aqu&iacute trabajan</h4>
+                          </li>
+                          <li>
+                            <table id="mainTable" class="responsive-table striped">
+                              <thead>
+                                <tr>
+                                  <th>Nombre</th>
+                                  <th>Fecha Nacimiento</th>
+                                  <th>Usuario</th>
+                                  <th>Rol</th>
+                                  <th>Domicilio</th>
+                                  <th>Celular</th>
+                                  <th>Email</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr ng-repeat="empleado in empleados">
+                                  <td ng-bind=empleado.nombre></td>
+                                  <td ng-bind=empleado.fechaNac></td>
+                                  <td ng-bind=empleado.user></td>
+                                  <td ng-bind=empleado.rol></td>
+                                  <td ng-bind=empleado.domicilio></td>
+                                  <td ng-bind=empleado.celular></td>
+                                  <td ng-bind=empleado.email></td>
+                                  <td>
+                                    <a href="pedidos.html"><i class="mdi-action-delete"></i></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </form>
+                  <!-- Floating Action Button  BOTONO CHIQUITO DEL COSTADO-->
+                  <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+                    <a href="#modal" class="tooltipped modal-trigger btn-floating btn-large" data-position="left" data-delay="50" data-tooltip="Nuevo Empleado">
+                      <i class="mdi-content-add"></i>
+                    </a>
+                  </div>
+                  <div id="modal" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col s12">
+                            <h5>Nuevo Usuario</h5>
+                            <div class="divider"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container">
+                      <form class="col s12 right-alert formValidate" id="formValidate">
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix"></i>
+                            <input id="name" type="text" name="name" class="validate" data-error=".errorName">
+                            <label for="name" data-error="Please enter first name.">Nombre</label>
+                            <div class="errorName"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <i class="mdi-action-verified-user prefix"></i>
+                            <input id="date-demo1" placeholder="2015-01-01" type="text" class="validate" data-error=".errorFecha">
+                            <label for="age_input2" data-error="Please enter your age.">Fecha Nac</label>
+                            <div class="errorFecha"></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <i class="mdi-communication-email prefix"></i>
+                            <input id="email_input2" type="email" class="validate">
+                            <label for="email_input2" data-error="Ingrese un correo valido">Email</label>
+                            <!-- <div class="errorEmail"></div> -->
+                          </div>
+                          <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix"></i>
+                            <input id="uname" name="uname" type="text" data-error=".errorUser">
+                            <label for="uname">Usuario</label>
+                            <div class="error errorUser"></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input id="password2" type="password" name="password" class="validate" data-error=".errorPass">
+                            <label for="password2">Password</label>
+                            <div class="errorPass"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input id="cpassword" name="cpassword" type="password" class="validate" data-error=".errorCPass">
+                            <label for="cpassword">Confirmar Password</label>
+                            <div class="errorCPass"></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col s6">
+                            <label for="genter_select">Sexo</label>
+                            <p>
+                              <input name="cgender" type="radio" id="gender_male" data-error=".errorSex"/>
+                              <label for="gender_male">Masc</label>
+                            </p>
+                            <p>
+                              <input name="cgender" type="radio" id="gender_female" value="f"/>
+                              <label for="gender_female">Fem</label>
+                            </p>
+                            <div class="input-field">
+                              <div class="errorSex"></div>
+                            </div>
+                          </div>
+                          <div class="col s6">
+                            <label for="rol_select">Rol</label>
+                            <p>
+                            <input name="rolselect" type="radio" id="rol_adm" data-error=".errorRol"/>
+                              <label for="rol_adm">Administrador</label>
+                            </p>
+                            <p>
+                              <input name="rolselect" type="radio" id="rol_emp" value="f"/>
+                              <label for="rol_emp">Empleado</label>
+                            </p>
+                            <div class="input-field">
+                              <div class="errorRol"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <i class="mdi-action-home prefix"></i>
+                            <input id="domicilio" type="text" name="domicilio" class="validate" data-error=".errorDomicilio">
+                            <label for="domicilio" class="" data-error="Ingrese un domicilio valido.">Domicilio</label>
+                            <div class="errorDomicilio"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <i class="mdi-hardware-phone-iphone prefix"></i>
+                            <input id="celular" type="number" name="celular" class="validate" data-error=".errorPhone">
+                            <label for="celular" data-error="Ingrese un numero valido.">Celular</label>
+                            <div class="errorPhone"></div>
+                          </div>
+                        </div>                 
+
+                      </form>
+                      </div>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Cancelar</a>
+                        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Aceptar</a>
+                      </div>
+                    </div>
+                    <!-- Floating Action Button -->
+                  </div>
+                  <!--end container-->
+                </section>
+                <!-- END CONTENT -->
+
+                <!-- //////////////////////////////////////////////////////////////////////////// -->
               </div>
-              <div class="modal-footer">
-                <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Cancelar</a>
-                <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Aceptar</a>
-              </div>
+              <!-- END WRAPPER -->
+
             </div>
-    <!-- Floating Action Button -->
-  </div>
-  <!--end container-->
-</section>
-<!-- END CONTENT -->
-
-<!-- //////////////////////////////////////////////////////////////////////////// -->
-</div>
-<!-- END WRAPPER -->
-
-</div>
-<!-- END MAIN -->
+            <!-- END MAIN -->
 
 
 
-<!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
 
-<!-- START FOOTER -->
-<footer class="page-footer">
-  <div class="footer-copyright">
-    <div class="container">
-      <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
-      <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER -->
+            <!-- START FOOTER -->
+            <footer class="page-footer">
+              <div class="footer-copyright">
+                <div class="container">
+                  <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
+                  <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
+                </div>
+              </div>
+            </footer>
+            <!-- END FOOTER -->
 
 
 
@@ -234,8 +364,8 @@
     <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>    
     <!--materialize js-->
     <script type="text/javascript" src="js/materialize.js"></script>
-    <!--prism
-    <script type="text/javascript" src="js/prism/prism.js"></script>-->
+    <!-- prism -->
+    <script type="text/javascript" src="js/prism/prism.js"></script>
     <!--scrollbar-->
     <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <!-- chartist -->
@@ -248,6 +378,10 @@
 
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/plugins/formatter/jquery.formatter.min.js"></script> 
+    <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery-validation/additional-methods.min.js"></script>
+    
 
     <!-- Angular -->
     <script src="js/angular.min.js"></script>
@@ -260,14 +394,66 @@
     <script type="text/javascript" src="js/plugins/editable-table/mindmup-editabletable.js"></script>   
     <script type="text/javascript" src="js/plugins/editable-table/numeric-input-example.js"></script>
     <script type="text/javascript">
-        $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
-        $('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
-        window.prettyPrint && prettyPrint();
+      $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+      $('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
+      window.prettyPrint && prettyPrint();
     </script>
     <script>
       $(document).ready(function(){
-          $('.tooltipped').tooltip({delay: 50});
+        $('.tooltipped').tooltip({delay: 50});
       });
+    </script>
+    <script>
+      $('#date-demo1').formatter({
+        'pattern': '{{9999}}-{{99}}-{{99}}',
+      });
+      $("#formValidate").validate({
+        rules: {
+          uname: {
+            required: true,
+            minlength: 5
+          },
+          name:{
+            required: true,
+            minlength: 5
+          },
+          domicilio: {
+            required: true
+          },
+          celular: {
+            maxlength: 10,
+            minlength: 9
+          },  
+          password: {
+            required: true,
+            minlength: 5
+          },
+          cpassword: {
+            required: true,
+            minlength: 5,
+            equalTo: "#password"
+          },
+          cgender:"required",
+          rolselect:"required",
+        },
+        //For custom messages
+        messages: {
+            uname:{
+                required: "Enter a username",
+                minlength: "Enter at least 5 characters"
+            },
+        },
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+          if (placement) {
+            $(placement).append(error)
+          } else {
+            error.insertAfter(element);
+          }
+        }
+      });
+
     </script>
     
   </body>
