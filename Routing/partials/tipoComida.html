@@ -1,0 +1,219 @@
+<div id="breadcrumbs-wrapper">
+  <!-- Search for small screen -->
+            <!-- <div class="header-search-wrapper grey hide-on-large-only">
+                <i class="mdi-action-search active"></i>
+                <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+            </div>
+          -->          <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <h5 class="breadcrumbs-title">Tipos de Comida</h5>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--breadcrumbs end-->
+
+
+
+      <!--start container-->
+      <div class="container">
+        <div class="section">
+         <div class="divider"></div>
+         <!-- TABLA ACORDION -->
+         <div id="accordion" class="section"> 
+          <!-- Primer fila de la pantalla -->
+          <div class="row">
+            <!-- Primera columna de la fila -->
+            <div class="col s12 m6 l6">
+              <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+                            <!-- <li>
+                              <div class="collapsible-header" ng-repeat="tipo in misTipos" ng-bind="tipo.name"></div>
+                                
+                                  <table class="striped">
+                                    <tbody>
+                                      <tr ng-repeat="item in tipo.items">
+                                        <td ng-bind="item.nameItem"></td>
+                                        <td ng-bind="item.cost| currency"></td>
+                                        <td><a href="" ng-click="recuperarDatos(item)"><i class="small blue-text mdi-content-create"></i></a></td>
+                                        <td><a href="" ng-click="eliminarPizzas($index)"><i class="small blue-text mdi-navigation-close"></i></a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                
+                                </li> -->
+                                <li >
+                                  <div class="collapsible-header">Pizzas</div>
+                                  <div class="collapsible-body">
+                                    <div class="container">
+                                      <table class="striped">
+                                        <tbody>
+                                          <tr ng-repeat="item in pizzas track by $index">
+                                            <td ng-bind="item.nombreItem"></td>
+                                            <td ng-bind="item.precio | currency"></td>
+                                            <td><a href="" ng-click="recuperarDatos(item)"><i class="small blue-text mdi-content-create"></i></a></td>
+                                            <td><a href="" ng-click="eliminarPizzas($index)"><i class="small blue-text mdi-navigation-close"></i></a></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="collapsible-header" >Lomitos</div>
+                                  <div class="collapsible-body">
+                                    <div class="container">
+                                      <table class="striped">
+                                        <tbody>
+                                          <tr ng-repeat="item in lomitos track by $index">
+                                            <td ng-bind="item.nombreItem"></td>
+                                            <td ng-bind="item.precio | currency"></td>
+                                            <td><a href="" ng-click="recuperarDatos(item)"><i class="small blue-text mdi-content-create"></i></a></td>
+                                            <td><a href="" ng-click="eliminarLomitos($index)"><i class="small blue-text mdi-navigation-close"></i></a></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="collapsible-header" >Tartas</div>
+                                  <div class="collapsible-body">
+                                    <div class="container">
+                                      <table class="striped">
+                                        <tbody>
+                                          <tr ng-repeat="item in tartas track by $index">
+                                            <td ng-bind="item.nombreItem"></td>
+                                            <td ng-bind="item.precio | currency"></td>
+                                            <td><a href="" ng-click="recuperarDatos(item)"><i class="small blue-text mdi-content-create"></i></a></td>
+                                            <td><a href="" ng-click="eliminarTartas($index)"><i class="small blue-text mdi-navigation-close"></i></a></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- Segunda columna de la fila -->
+                            <div class="col s12 m6 l6">  
+                              <div class="card-panel">
+                                <div class="container">
+                                  <form action="">
+                                    <div class="container">
+                                      <div class="row ">
+                                        <h5> Nuevo Registro</h5>
+                                        <div class="divider"></div>
+                                        
+                                      </div> 
+                                      <br>
+                                    </div>
+                                    <div class="container"> 
+                                      <div class="row"> 
+                                        <div class="col s6 m6 l6">
+                                          <label for="txt-nombre">Comida</label>
+                                          <input ng-model="nombre" placeholder="Ingrese el nombre" id="txt-nombre" type="text" class="validate">     
+                                        </div>
+                                        <div class="col s6 m6 l6">
+                                          <label for="txt-precio">Precio</label>
+                                          <input  ng-model= "precioo" placeholder="Ingrese el precio" id="txt-precio" type="text" class="validate"> 
+                                        </div>
+                                      </div>
+                                      <br> 
+                                    </div>
+                                    <div class="container">
+                                      <div class="row">
+                                        <div class="input-field col s10 m10 l10">
+                                          
+                                          <select name="tipoSelect" id="tipoSelect" >
+                                            <!-- <option selected value="" ng-model="tipoDefault">{{tipoDefault}}</option>  -->
+                                            <option value="" disabled selected>Seleccione</option>
+                                            <option value="1">Pizza</option>
+                                            <option value="2">Lomito</option>
+                                            <option value="3">Tarta</option>
+                                            <!-- <option ng-repeat="option in tipos.availableOptions" value="{{option.id}}">{{option.name}}</option> -->
+                                          </select>
+                                          <label for="tipoSelect">Tipos de Comida</label>
+                                          <!-- <select ng-model="tipoDefault">
+                                            <option value="" disabled selected>Selecciona el tipo de comida</option>
+                                            <option value="1">Pizza</option>
+                                            <option value="2">Lomito</option>
+                                            <option value="3">Tarta</option>
+                                          </select>
+                                          <label>Tipos de Comida</label> -->
+                                        </div>
+                                        <div class="col s2 m2 l2">
+                                          <a ng-click="flagNewTipo = false"href=""><i class="small tooltipped blue-text mdi-content-add-circle-outline" data-position="bottom" data-delay="50" data-tooltip="Nuevo Tipo de Comida"></i></a>   
+                                        </div>
+                                      </div>
+                                      <br>                                
+                                    </div> 
+                                    <div class="container">
+                                      <div ng-hide="flagNewTipo"class="row">
+                                        <div class="col s10 m10 l10">
+                                          <label class=""for="nombre">Tipo de Comida</label>
+                                          <input class="validate" placeholder="Ingrese el nuevo tipo de comida" id="nombre" type="text" > 
+                                        </div>
+                                        <div class="col s2 m2 l2">
+                                          <a ng-click="flagNewTipo = true"href=""><i class="small tooltipped blue-text mdi-content-clear" data-position="bottom" data-delay="50" data-tooltip="Ocultar"></i></a>   
+                                        </div>
+                                      </div>
+                                      <br>
+                                    </div> 
+                                    <div class="container">
+                                      <div class="row">
+                                        <div class="col s6 m6 l6">
+                                          <a href="" class="waves-effect waves-light btn blue">Aceptar</a>
+                                          <!-- <a href="" ng-click="agregarItem(tarta)"><i class="medium blue-text mdi-navigation-check"></i></a> -->
+                                        </div>
+                                        <div class="col s6 m6 l6">
+                                          <a href="" class="waves-effect waves-light btn blue">Cancelar</a>
+                                          <!-- <a href="" ng-click="agregarItem(tarta)"><i class="medium blue-text mdi-navigation-close"></i></a> -->
+                                        </div>
+                                      </div>                                
+                                    </div>
+
+                                    <!-- PREUBAS DE HUEVADAS -->
+                                    
+                                    
+                                  </form>             
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br><br><br><br><br><br>
+                      </div>
+
+
+
+
+                      <!-- Floating Action Button  BOTONO CHIQUITO DEL COSTADO-->
+                     <!--  <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+                        <a class="btn-floating btn-large">
+                          <i class="mdi-action-stars"></i>
+                        </a>
+                        <ul>
+                          <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
+                          <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
+                          <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+                          <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+                        </ul>
+                      </div> -->
+                      <!-- Floating Action Button -->
+                    </div>
+    <!-- <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+      <a class="btn-floating btn-large">
+        <i class="mdi-action-stars"></i>
+      </a>
+      <ul>
+        <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
+        <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
+        <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+        <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+      </ul>
+    </div> -->
+    <!-- Floating Action Button -->
+  </div>
+  <!--end container-->
