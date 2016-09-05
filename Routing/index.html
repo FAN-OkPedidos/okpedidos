@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Cazimba">
 
 <!--================================================================================
 	Item Name: Materialize - Material Design Admin Template
@@ -15,7 +15,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-    <title>Cazimba</title>
+    <title>Page Blank | Materialize - Material Design Admin Template</title>
 
     <!-- Favicons-->
     <link rel="icon" href="images/favicon/logofav.png" sizes="32x32">
@@ -58,7 +58,7 @@
           <div class="nav-wrapper">
             <!-- LOGO DEL SISTEMAAAA -->
             <ul class="left">                      
-              <li><h1 class="logo-wrapper"><a href="#" class="brand-logo darken-1"><img src="images/logo2.png" alt="cazimba logo"></a> <span class="logo-text">Cazimba</span></h1></li>
+              <li><h1 class="logo-wrapper"><a href="pedidos-pendientes.html" class="brand-logo darken-1"><img src="images/logo2.png" alt="cazimba logo"></a> <span class="logo-text">Cazimba</span></h1></li>
             </ul>
             <!-- LA PARTE DE ARRIBA A LA DERECHA -->
             <ul class="right hide-on-med-and-down">
@@ -93,13 +93,13 @@
                 </div>
               </div>
             </li>
-            <li><a href="index.html"><i class="mdi-action-home"></i> Principal</a>
+            <li><a href="#pedidos-pendientes"><i class="mdi-action-home"></i> Principal</a>
             </li>
-            <li class="bold"><a href="pedidos.html" class="waves-effect waves-cyan"><i class="mdi-av-web"></i> Pedidos</a>
+            <li class="bold"><a href="#pedidos" class="waves-effect waves-cyan"><i class="mdi-av-web"></i> Pedidos</a>
             </li>
-            <li class="bold"><a href="tipoComidas.html" class="waves-effect waves-cyan"><i class="mdi-maps-local-restaurant"></i> Comidas</a>
+            <li class="bold"><a href="#tipoComidas" class="waves-effect waves-cyan"><i class="mdi-maps-local-restaurant"></i> Comidas</a>
             </li>
-            <li><a href="empleados.html"><i class="mdi-action-face-unlock"></i> Empleados</a>
+            <li><a href="#"><i class="mdi-action-face-unlock"></i> Empleados</a>
             </li>
             <li class="li-hover"><div class="divider"></div></li>
             <li><a href="user-lock-screen.html"><i class="mdi-action-lock-outline"></i> Lock</a>
@@ -117,71 +117,31 @@
 
         <!-- START CONTENT -->
         <section id="content">
-          <!--breadcrumbs start-->
-          <div id="breadcrumbs-wrapper">
-            <!-- Search for small screen -->
-            <!-- <div class="header-search-wrapper grey hide-on-large-only">
-                <i class="mdi-action-search active"></i>
-                <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
-            </div>
-          -->          <div class="container">
-          <div class="row">
-            <div class="col s12 m12 l12">
-              <h5 class="breadcrumbs-title">Pedidos Pendientes</h5>
-              <br>
-            </div>
-          </div>
+          <div class="ng-view"></div>
+        </section>
+        <!-- END CONTENT -->
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+      </div>
+      <!-- END WRAPPER -->
+
+    </div>
+    <!-- END MAIN -->
+
+
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- START FOOTER -->
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
+          <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
         </div>
       </div>
-      <!--breadcrumbs end-->
-
-
-
-      <!--start container-->
-      <div class="container">
-        <div class="section">
-
-          <div class="divider"></div>
-          <div id="accordion" class="section">
-        <!-- Floating Action Button  BOTONO CHIQUITO DEL COSTADO-->
-    <!-- <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
-      <a class="btn-floating btn-large">
-        <i class="mdi-action-stars"></i>
-      </a>
-      <ul>
-        <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
-        <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
-        <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
-        <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
-      </ul>
-    </div> -->
-    <!-- Floating Action Button -->
-  </div>
-  <!--end container-->
-</section>
-<!-- END CONTENT -->
-
-<!-- //////////////////////////////////////////////////////////////////////////// -->
-</div>
-<!-- END WRAPPER -->
-
-</div>
-<!-- END MAIN -->
-
-
-
-<!-- //////////////////////////////////////////////////////////////////////////// -->
-
-<!-- START FOOTER -->
-<footer class="page-footer">
-  <div class="footer-copyright">
-    <div class="container">
-      <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
-      <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER -->
+    </footer>
+    <!-- END FOOTER -->
 
 
 
@@ -210,6 +170,11 @@
 
     <!-- Angular -->
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route/angular-route.min.js"></script>
+    <script src="js/controller.js"></script>
+    <!-- <script src="js/pedidos-controller.js"></script> -->
+    <script src="js/config.js"></script>
+    
     
     <!--custom-script.js - Add your own theme custom JS-->
     <script type="text/javascript" src="js/custom-script.js"></script>
