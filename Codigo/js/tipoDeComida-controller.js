@@ -5,15 +5,18 @@ app.controller("TipoDeComidaController", function($scope){
 	// bandera para saber si hay que editar o agregar uno nuevo, false(uno nuevo) true (editar)
 	$scope.flagNewTipo = true;
 	$scope.flagEditOrNew = false; 
+	$scope.selectValue = {};
 
 	$scope.pizzas = [{id:1, nombreItem:"Fugazza", precio: 36, tipoComida: {tipo: "Pizza"}},{id:2, nombreItem:"Jamon y queso", precio: 87, tipoComida: {tipo: "Pizza"}},{id:3, nombreItem:"Palmitos", precio: 13,tipoComida: {tipo: "Pizza"}}];
 	$scope.tartas = [{id:1, nombreItem:"Acelga", precio: 34, tipoComida: {tipo: "Lomitos"}},{id:2, nombreItem:"Jamon y queso", precio: 45, tipoComida: {tipo: "Lomitos"}},{id:3, nombreItem:"Choclo", precio: 16, tipoComida: {tipo: "Lomitos"}}];
 	$scope.lomitos = [{id:1, nombreItem:"Simple", precio: 12, tipoComida: {tipo: "Tartas"}},{id:2, nombreItem:"Pollo", precio: 65, tipoComida: {tipo: "Tartas"}},{id:3, nombreItem:"Cerdo", precio: 19, tipoComida: {tipo: "Tartas"}}];
 	// $scope.misTipos = [$scope.pizzas,$scope.tartas,$scope.lomitos];
-	$scope.recuperarDatos = function (item) {
+	$scope.recuperarDatos = function (item, tip) {
 		$scope.nombre = item.nombreItem;
 		$scope.precioo = item.precio;
+		$scope.selectValue = tip;
 		$scope.flagEditOrNew= true;
+		console.log($scope.selectValue);
 	}
 	$scope.eliminarLomitos = function (index) {
 		$scope.lomitos.splice(index,1);
@@ -47,6 +50,14 @@ app.controller("TipoDeComidaController", function($scope){
 						{name: "Sandwiches" , items:[{nameItem: "Caprese", cost: 15},{nameItem: "Bondiolo", cost: 14},{nameItem: "Salamin", cost: 13}]}
 
 	];
+	
+	
+	/* SELEC CON ANGULAR MATERIALIZE
+ 	 $scope.select = {
+            value1: "Option1",
+            choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
+        };*/
+
 	// $scope.misComidas = [
 	// 						{nombre: "Fugazza", precio: 4, tipoComida: {tipo: "Pizza"}},
 	// 						{nombre: "Especial", precio: 4, tipoComida: {tipo: "Pizza"}},

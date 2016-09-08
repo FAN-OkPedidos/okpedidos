@@ -15,4 +15,6 @@ angular.module("pedidosPendientes", [])
   $scope.finalizarPedido = function(pedido){
   		pedido.estado = "Finalizado";
   };
+
+ 
 });
