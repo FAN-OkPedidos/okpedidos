@@ -1,0 +1,5 @@
+Cuando ejecute el comando node install --save express se creo la carpeta Node Modules con todo lo que tiene dentro
+
+Cuando hice node install express-generator -g -> express -ejs . Se creo todo lo que esta dentro de la carpeta Prueba Express
+
+El comando npm init creo el archivo package.json
