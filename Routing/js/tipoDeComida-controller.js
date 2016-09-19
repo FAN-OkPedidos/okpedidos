@@ -1,4 +1,3 @@
-var app = angular.module("PrimerApp" , []);
 app.controller("TipoDeComidaController", function($scope){
 	$scope.nombre= "";
 	$scope.precioo= "";

@@ -16,7 +16,8 @@ app.config(function($routeProvider)
 		})
 		.when("/tipoComidas",
 		{
-			templateUrl: "partials/tipoComida.html"
+			templateUrl: "partials/tipoComida.html",
+			controller : "TipoDeComidaController"
 		})
 		.otherwise(
 		{

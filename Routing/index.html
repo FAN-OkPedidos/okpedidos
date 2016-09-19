@@ -116,8 +116,8 @@
         <!-- //////////////////////////////////////////////////////////////////////////// -->
 
         <!-- START CONTENT -->
-        <section id="content">
-          <div class="ng-view"></div>
+        <section id="content" ng-controller="CazimbaController">
+          <div class="ng-view" onload="onload()"></div>
         </section>
         <!-- END CONTENT -->
 
@@ -172,7 +172,8 @@
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route/angular-route.min.js"></script>
     <script src="js/controller.js"></script>
-    <!-- <script src="js/pedidos-controller.js"></script> -->
+    <script src="js/pedidos-controller.js"></script>
+    <script src="js/tipoDeComida-controller.js"></script>
     <script src="js/config.js"></script>
     
     

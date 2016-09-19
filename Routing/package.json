@@ -1,5 +1,5 @@
 {
-  "name": "nicorios",
+  "name": "Cazimba",
   "version": "1.0.0",
   "private": true,
   "description": "cazimba_routing",
@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "nicorios",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
