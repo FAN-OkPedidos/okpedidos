@@ -52,11 +52,11 @@ app.controller("TipoDeComidaController", function($scope){
 	];
 	
 	
-	/* SELEC CON ANGULAR MATERIALIZE
+	 // SELEC CON ANGULAR MATERIALIZE
  	 $scope.select = {
-            value1: "Option1",
-            choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
-        };*/
+            value1: "Pizzas",
+            choices: ["Pizzas", "Lomitos", "Empanadas", "Tartas"]
+        };
 
 	// $scope.misComidas = [
 	// 						{nombre: "Fugazza", precio: 4, tipoComida: {tipo: "Pizza"}},

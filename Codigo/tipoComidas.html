@@ -37,6 +37,13 @@
     <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Angular -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-materialize.js"></script>
+    <script src="js/tipoDeComida-controller.js"></script>
+    
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script type="text/javascript" src="js/custom-script.js"></script>
   </head>
 
   <body>
@@ -246,16 +253,16 @@
                                     <div class="row">
                                         <div class="input-field col s10 m10 l10">
                                           <!-- SELECT CON ANGUlAR MATERIALEZE -->
-                                          <!-- <select class="" ng-model="select.value1" material-select watch>
+                                          <select class="tipoSelect" ng-model="select.value1" material-select watch>
                                                 <option ng-repeat="value in select.choices" ng-bind="value"></option>
-                                          </select> -->
-                                          <select ng-model="selectValue" name="tipoSelect" id="tipoSelect" material-select watch>
+                                          </select>
+                                          <!-- <select ng-model="selectValue" name="tipoSelect" id="tipoSelect" material-select watch>
                                               <option value="" disabled selected ng-model="selectValue"></option>
                                               <option value="1">Pizza</option>
                                               <option value="2">Lomito</option>
                                               <option value="3">Tarta</option>
                                           </select>
-                                          <label for="tipoSelect">Tipos de Comida</label>
+ -->                                          <label for="tipoSelect">Tipos de Comida</label>
                                         </div>
                                         <div class="col s2 m2 l2">
                                             <a ng-click="flagNewTipo = false"href=""><i class="small tooltipped blue-text mdi-content-add-circle-outline" data-position="bottom" data-delay="50" data-tooltip="Nuevo Tipo de Comida"></i></a>   
@@ -381,13 +388,7 @@
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
 
-    <!-- Angular -->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-materialize.js"></script>
-    <script src="js/tipoDeComida-controller.js"></script>
     
-    <!--custom-script.js - Add your own theme custom JS-->
-    <script type="text/javascript" src="js/custom-script.js"></script>
     <script>
         $(document).ready(function(){
            $('.tooltipped').tooltip({delay: 50});
